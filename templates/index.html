@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <title>OpenAI CSS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+    <h3>OpenAI Agent</h3>
+    <h4>Ask any question about OpenAI</h4>
+    <br>
+    <div id="chatbox">
+        <form id="message-form" action="/" method="post">
+            <input type="text" id="message-input" name="question" placeholder="Enter your question here" required />
+            <input type="submit" value="Get answer" />
+        </form>
+        <p id="result">
+            <br>
+            {% if result %}
+            <div class="result">{{ result }}</div>
+            {% endif %}
+        </p>   
+    </div>
+
+</body>
